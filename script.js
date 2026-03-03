@@ -46,3 +46,37 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.animate-on-scroll').forEach((el) => {
     observer.observe(el);
 });
+
+// Animated Counters
+function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-number[data-target]').forEach(animateCounter);
+            obs.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+const statsContainers = document.querySelectorAll('.stats-counters');
+statsContainers.forEach(container => counterObserver.observe(container));
+
