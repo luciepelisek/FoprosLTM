@@ -80,3 +80,19 @@ const counterObserver = new IntersectionObserver((entries, obs) => {
 const statsContainers = document.querySelectorAll('.stats-counters');
 statsContainers.forEach(container => counterObserver.observe(container));
 
+// Scroll-to-top tlačítko
+const scrollTopBtn = document.getElementById('scroll-top');
+
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}

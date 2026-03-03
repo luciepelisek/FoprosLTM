@@ -27,52 +27,58 @@
 
 <body>
 
-    <!-- Secondary Menu / Top Bar -->
-    <div class="top-bar">
-        <div class="container-fluid">
-            <div class="top-contact-info">
-                <a href="tel:+420777550773" class="top-link">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+420 777 550 773</span>
-                </a>
-                <a href="mailto:info@foprosltm.cz" class="top-link">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>info@foprosltm.cz</span>
-                </a>
-                <div class="top-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <!-- Site Header Wrapper (sticky) -->
+    <div class="site-header-wrap">
+
+        <!-- Secondary Menu / Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="top-contact-info">
+                    <a href="tel:+420777550773" class="top-link">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+420 777 550 773</span>
+                    </a>
+                    <a href="mailto:info@foprosltm.cz" class="top-link">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@foprosltm.cz</span>
+                    </a>
+                    <div class="top-social">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Main Header -->
-    <header class="header" id="header">
-        <div class="container-fluid header-inner">
-            <a href="index.html" class="logo">
-                <img src="Obrazky/Logo.png" alt="FOPROS LTM Logo" loading="lazy">
-            </a>
+        <!-- Main Header -->
+        <header class="header" id="header">
+            <div class="container-fluid header-inner">
+                <a href="index.html" class="logo">
+                    <img src="Obrazky/Logo.png" alt="FOPROS LTM Logo" loading="lazy">
+                </a>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-label="Otevřít navigaci" aria-expanded="false" aria-controls="main-nav">
-                <span class="hamburger"></span>
-            </button>
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Otevřít navigaci" aria-expanded="false"
+                    aria-controls="main-nav">
+                    <span class="hamburger"></span>
+                </button>
 
-            <!-- Navigation -->
-            <nav id="main-nav" class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Vítejte</a></li>
-                    <li><a href="sluzby.html" class="nav-link">Služby</a></li>
-                    <li><a href="technologie.html" class="nav-link">Technologie</a></li>
-                    <li><a href="pro-autoservisy.html" class="nav-link">Pro autoservisy</a></li>
-                    <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
-                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
-                    <li><a href="kontakt.html" class="btn btn-nav">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+                <!-- Navigation -->
+                <nav id="main-nav" class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Vítejte</a></li>
+                        <li><a href="sluzby.html" class="nav-link">Služby</a></li>
+                        <li><a href="technologie.html" class="nav-link">Technologie</a></li>
+                        <li><a href="pro-autoservisy.html" class="nav-link">Pro autoservisy</a></li>
+                        <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
+                        <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                        <li><a href="kontakt.html" class="btn btn-nav">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    </div><!-- /site-header-wrap -->
 
     <main>
         <!-- Sekce 1: HERO -->
@@ -307,7 +313,7 @@
                     <p>Ozvěte se nám. Řekneme vám, zda má čištění smysl, kolik bude stát a jak rychle ho zvládneme
                         vyřešit.</p>
                     <a href="tel:+420777550773" class="btn btn-outline"><i class="fa-solid fa-phone"></i>
-                        +420 777 550 773</a>
+                        <span class="tel-prefix">+420 </span>777 550 773</a>
                 </div>
             </div>
         </section>
@@ -339,8 +345,7 @@
                         <div>
                             <strong>FOPROS LTM s.r.o.</strong><br>
                             Na Kocandě 1913/39<br>
-                            412 01 Litoměřice<br>
-                            <span class="small-text">(bývalý areál ČSAD Litoměřice – po průjezdu branou doprava)</span>
+                            412 01 Litoměřice
                         </div>
                     </li>
                 </ul>
@@ -354,7 +359,6 @@
                     <li><span>Sobota</span> <span>Zavřeno</span></li>
                     <li><span>Neděle</span> <span>Zavřeno</span></li>
                 </ul>
-                <p class="small-text mt-3">Po domluvě je možné řešit zakázky individuálně.</p>
             </div>
 
             <!-- Map -->
@@ -371,15 +375,22 @@
         <div class="footer-bottom">
             <div class="container footer-bottom-inner">
                 <div class="copyright">
-                    &copy; 2026 FOPROS LTM s.r.o. Všechna práva vyhrazena.
+                    &copy; 2026 FOPROS LTM s.r.o.
                 </div>
                 <div class="footer-links">
-                    <a href="#">Ochrana osobních údajů</a>
-                    <a href="#">Design od Lucie Pelíšek</a>
+                    <a href="ochrana-osobnich-udaju.html" target="_blank" rel="noopener">Ochrana osobních údajů</a>
+                    <a href="https://luciepelisek.cz" target="_blank" rel="noopener">Design od <strong
+                            class="designer-name">Lucie Pelíšek</strong></a>
                 </div>
             </div>
         </div>
     </footer>
+
+
+    <!-- Scroll-to-top tlačítko -->
+    <button id="scroll-top" aria-label="Zpět na začátek">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
     <script src="script.js" defer></script>
 </body>
