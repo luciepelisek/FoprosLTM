@@ -1,0 +1,658 @@
+/* =========================================================================
+   pro-autoservisy.css – styly specifické pro stránku Pro autoservisy
+   ========================================================================= */
+
+/* =========================================================================
+   Hero – foto verze (stejná jako sluzby/technologie)
+   ========================================================================= */
+.hero-photo {
+    position: relative;
+    min-height: 65vh;
+    padding: 11rem 0 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1.03);
+    transition: transform 8s ease;
+}
+
+.hero-photo:hover .hero-photo-bg {
+    transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+    .hero-photo {
+        min-height: 55vh;
+        padding: 9rem 0 7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-photo {
+        min-height: 50vh;
+        padding: 7.5rem 0 6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-photo {
+        min-height: 45vh;
+        padding: 6rem 0 5rem;
+    }
+}
+
+/* =========================================================================
+   Sekce 2: Proč spolupracovat
+   ========================================================================= */
+.proc-section {
+    background: var(--white);
+}
+
+.proc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+@media (min-width: 1024px) {
+    .proc-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+    }
+}
+
+.partner-claim {
+    margin-top: 1.5rem;
+}
+
+.partner-claim strong {
+    color: var(--highlight);
+    font-size: clamp(1rem, 1.6vw, 1.05rem);
+}
+
+/* 4 feature karty vpravo */
+.proc-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+@media (min-width: 576px) and (max-width: 1023px) {
+    .proc-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.proc-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    background: var(--bg-variant2);
+    border-radius: var(--radius);
+    padding: clamp(1.2rem, 2.5vw, 1.5rem);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.proc-card:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--primary);
+    transform: translateX(6px);
+}
+
+.proc-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 12px rgba(69, 114, 29, 0.2);
+    transition: var(--transition);
+}
+
+.proc-card:hover .proc-icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(69, 114, 29, 0.3);
+}
+
+.proc-card h4 {
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    color: var(--highlight);
+    margin-bottom: 0.35rem;
+}
+
+.proc-card p {
+    font-size: clamp(0.85rem, 1.3vw, 0.9rem);
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* =========================================================================
+   Sekce 3: Timeline spolupráce
+   ========================================================================= */
+.timeline-section {
+    background: var(--bg-variant2);
+}
+
+.as-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .as-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .as-timeline {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.as-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: clamp(1.2rem, 2vw, 1.5rem);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.as-step:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.as-step-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(69, 114, 29, 0.2);
+}
+
+.as-step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.as-step-num {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary);
+}
+
+.as-step-body p {
+    font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Uzavírací note */
+.as-timeline-note {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 860px;
+    margin: 2rem auto 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--gradient-primary);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(69, 114, 29, 0.25);
+}
+
+.as-timeline-note i {
+    color: var(--white);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.as-timeline-note span {
+    font-family: var(--font-heading);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================================
+   Sekce 4: Co získáte
+   ========================================================================= */
+.ziskate-section {
+    background: var(--white);
+}
+
+.ziskate-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .ziskate-inner {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 5rem;
+    }
+}
+
+/* Seznam benefitů */
+.ziskate-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.ziskate-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: clamp(0.9rem, 1.4vw, 0.95rem);
+    color: var(--text-dark);
+    line-height: 1.65;
+    padding: clamp(0.9rem, 1.5vw, 1.1rem) clamp(1rem, 2vw, 1.3rem);
+    background: var(--bg-variant2);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.ziskate-list li:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
+    transform: translateX(6px);
+}
+
+.ziskate-list li i {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* highlight věta */
+.ziskate-claim {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: clamp(1rem, 2vw, 1.3rem) clamp(1.2rem, 2.5vw, 1.5rem);
+    background: var(--gradient-primary);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(69, 114, 29, 0.25);
+}
+
+.ziskate-claim i {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.ziskate-claim p {
+    font-family: var(--font-heading);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: var(--white);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 3 highlight karty vpravo */
+.ziskate-highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.zh-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: var(--transition);
+    border-top: 3px solid var(--primary);
+}
+
+.zh-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.zh-card i {
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.zh-card h4 {
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+    color: var(--highlight);
+    margin-bottom: 0;
+}
+
+.zh-card p {
+    font-size: clamp(0.85rem, 1.3vw, 0.9rem);
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* =========================================================================
+   Sekce 5: Technický přístup – tmavý gradient pás
+   ========================================================================= */
+.tech-pristup-section {
+    background: linear-gradient(135deg, #2d3d28 0%, #3d5234 50%, #4a5e38 80%, #4a3a2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-pristup-section::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(252, 115, 93, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.tp-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 1024px) {
+    .tp-inner {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 5rem;
+        align-items: center;
+    }
+}
+
+.tp-text h2 {
+    color: var(--white);
+}
+
+.tp-text p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* 4 karty přístupu */
+.tp-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 480px) {
+    .tp-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tp-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    padding: clamp(1.2rem, 2vw, 1.5rem);
+    transition: var(--transition);
+}
+
+.tp-card:hover {
+    background: rgba(255, 255, 255, 0.13);
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.tp-card i {
+    font-size: 1.5rem;
+    color: #FC735D;
+}
+
+.tp-card span {
+    font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+/* =========================================================================
+   Sekce 6: Pro koho – 4 karty
+   ========================================================================= */
+.pro-koho-section {
+    background: var(--bg-variant2);
+}
+
+.pro-koho-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .pro-koho-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .pro-koho-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.pk-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: clamp(2rem, 3vw, 2.5rem) clamp(1.5rem, 2.5vw, 2rem);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.pk-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.pk-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.pk-card:hover::before {
+    transform: scaleX(1);
+}
+
+.pk-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--bg-variant2);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.pk-card:hover .pk-icon {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.pk-card p {
+    font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.55;
+    text-align: center;
+}
+
+/* =========================================================================
+   Sekce 7: Spolupracujeme – partner karty
+   ========================================================================= */
+.spoluprace-section {
+    background: var(--white);
+}
+
+.partneri-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .partneri-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .partneri-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.partner-card {
+    background: var(--bg-variant2);
+    border-radius: var(--radius);
+    padding: clamp(1.8rem, 3vw, 2.5rem) clamp(1.5rem, 2.5vw, 2rem);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.partner-card:hover {
+    background: var(--white);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.partner-card:hover::after {
+    transform: scaleX(1);
+}
+
+.partner-location {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.partner-location i {
+    color: var(--link-color);
+    font-size: 0.9rem;
+}
+
+.partner-card h4 {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: var(--highlight);
+    margin-bottom: 0;
+    line-height: 1.35;
+}
+
+.partner-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(0.85rem, 1.3vw, 0.9rem);
+    color: var(--link-color);
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: auto;
+}
+
+.partner-link:hover {
+    color: var(--primary);
+    gap: 0.75rem;
+}
+
+.partner-link i {
+    font-size: 0.9rem;
+}
