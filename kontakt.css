@@ -258,6 +258,46 @@
     line-height: 1.5;
 }
 
+/* AJAX form status messages */
+.form-status-msg {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.form-status-msg.success {
+    background-color: rgba(69, 114, 29, 0.1);
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+}
+
+.form-status-msg.error {
+    background-color: rgba(252, 115, 93, 0.1);
+    color: #FC735D;
+    border-left: 4px solid #FC735D;
+}
+
+.form-status-msg i {
+    font-size: 1.4rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* =========================================================================
    Sekce 3: Adresa a Fakturace + velká mapa

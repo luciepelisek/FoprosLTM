@@ -96,3 +96,59 @@ if (scrollTopBtn) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+// AJAX Form Submit (FormSubmit)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Zabrani klasickemu presmerovani
+
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('form-status');
+
+        // Zmena tlacitka na odesilam
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Odesílám...</span><i class="fa-solid fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+
+        // Sber dat
+        const formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Uspech
+                    contactForm.reset();
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'form-status-msg success';
+                    formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> <div>Zpráva odeslána. Ozveme se co nejdříve zpět. Tým Fopros LTM</div>';
+
+                    // Schovat zpravu po chvili
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 8000);
+                } else {
+                    // Chyba serveru FormSubmit
+                    throw new Error('Chyba při odesílání');
+                }
+            })
+            .catch(error => {
+                // Chyba site nebo jina
+                formStatus.style.display = 'block';
+                formStatus.className = 'form-status-msg error';
+                formStatus.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> <div>Došlo k chybě při odesílání. Zkuste to prosím znovu nebo nám zavolejte.</div>';
+                console.error(error);
+            })
+            .finally(() => {
+                // Vrati tlacitko do puvodniho stavu
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            });
+    });
+}

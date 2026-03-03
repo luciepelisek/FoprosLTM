@@ -122,10 +122,10 @@
 
                     <!-- Pravý formulář -->
                     <div class="kf-form-wrapper">
-                        <form action="https://formsubmit.co/info@foprosltm.cz" method="POST" class="contact-form">
+                        <form id="contactForm" action="https://formsubmit.co/ajax/info@foprosltm.cz" method="POST"
+                            class="contact-form">
                             <!-- FormSubmit konfigurace -->
                             <input type="hidden" name="_subject" value="Zpráva z webu">
-                            <input type="hidden" name="_next" value="https://foprosltm.cz/kontakt.html">
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="box">
 
@@ -159,10 +159,13 @@
                                     placeholder="Dobrý den, potřeboval bych vyčistit..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-submit">
+                            <button type="submit" id="submitBtn" class="btn btn-primary btn-submit">
                                 <span>Odeslat poptávku</span>
                                 <i class="fa-solid fa-paper-plane"></i>
                             </button>
+
+                            <!-- Div pro zobrazení hlášky -->
+                            <div id="form-status" class="form-status-msg" style="display: none;"></div>
 
                             <div class="form-note">
                                 <i class="fa-solid fa-lock"></i>
