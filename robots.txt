@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foprosltm.cz/sitemap.xml
+
+Disallow: /ochrana-osobnich-udaju.html
